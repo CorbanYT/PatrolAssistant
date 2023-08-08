@@ -31,7 +31,7 @@ function main()
 	if not isSampLoaded() or not isSampfuncsLoaded() then return end
 	while not isSampAvailable() do wait(100) end
  
-    sampAddChatMessage(tag .. "{FFFFFF}Скрипт по обновлению - {5A90CE}работает.", main_color)
+    sampAddChatMessage(tag .. "{FFFFFF}Г‘ГЄГ°ГЁГЇГІ ГЇГ® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГѕ - {5A90CE}Г°Г ГЎГ®ГІГ ГҐГІ.", main_color)
 
     sampRegisterChatCommand("update", cmd_update)
     
@@ -42,7 +42,7 @@ function main()
         if status == dlstatus.STATUS_ENDDOWNLOADDATA then
             updateIni = inicfg.load(nil, update_path)
             if tonumber(updateIni.info.vers) > script_vers then 
-                sampAddChatMessage(tag .. "{FFFFFF}Появилось новое обновление! Версия: {5A90CE}".. updateIni.info.vers_text, main_color)
+                sampAddChatMessage(tag .. "{FFFFFF}ГЏГ®ГїГўГЁГ«Г®Г±Гј Г­Г®ГўГ®ГҐ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ! Г‚ГҐГ°Г±ГЁГї: {5A90CE}".. updateIni.info.vers_text, main_color)
             end
             os.remove(update_path)
         end
@@ -54,8 +54,8 @@ function main()
         if update_state then
             downloadUrlToFile(script_url, script_path, function(id, status) 
                 if status == dlstatus.STATUS_ENDDOWNLOADDATA then
-                    sampAddChatMessage(tag .. "{FFFFFF}Скрипт успешно {5A90CE}обновлен!", main_color)
-                    thisScript.reload()
+                    sampAddChatMessage(tag .. "{FFFFFF}Г‘ГЄГ°ГЁГЇГІ ГіГ±ГЇГҐГёГ­Г® {5A90CE}Г®ГЎГ­Г®ГўГ«ГҐГ­!", main_color)
+                    thisScript():reload()
                 end
             end)
             break
@@ -65,5 +65,5 @@ function main()
 end
 
 function cmd_update(arg)
-    sampShowDialog(1000, "Автообновление v2.0", "Это автообновление детка\nНовая версия", "Закрыть", "", 0)
+    sampShowDialog(1000, "ГЂГўГІГ®Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ v2.0", "ГќГІГ® Г ГўГІГ®Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ Г¤ГҐГІГЄГ \nГЌГ®ГўГ Гї ГўГҐГ°Г±ГЁГї", "Г‡Г ГЄГ°Г»ГІГј", "", 0)
 end
