@@ -17,8 +17,8 @@ u8 = encoding.UTF8
 
 update_state = false
 
-local script_vers = 2
-local script_vers_text = "1.01"
+local script_vers = 3
+local script_vers_text = "1.03"
 
 local update_path = getWorkingDirectory() .. "/update.ini"
 local update_url = "https://raw.githubusercontent.com/CorbanYT/PatrolAssistant/main/update.ini"
