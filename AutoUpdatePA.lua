@@ -31,7 +31,7 @@ function main()
 	if not isSampLoaded() or not isSampfuncsLoaded() then return end
 	while not isSampAvailable() do wait(100) end
  
-    sampAddChatMessage(tag .. "{FFFFFF}Ñêðèïò ïî îáíîâëåíèþ - {5A90CE}ðàáîòàåò.", main_color)
+    sampAddChatMessage(tag .. "{FFFFFF}Скрипт по обновлению - {5A90CE}работает.", main_color)
 
     sampRegisterChatCommand("update", cmd_update)
     
@@ -42,7 +42,7 @@ function main()
         if status == dlstatus.STATUS_ENDDOWNLOADDATA then
             updateIni = inicfg.load(nil, update_path)
             if tonumber(updateIni.info.vers) > script_vers then 
-                sampAddChatMessage(tag .. "{FFFFFF}Ïîÿâèëîñü íîâîå îáíîâëåíèå! Âåðñèÿ: {5A90CE}".. updateIni.info.vers_text, main_color)
+                sampAddChatMessage(tag .. "{FFFFFF}Появилось новое обновление! Версия: {5A90CE}".. updateIni.info.vers_text, main_color)
             end
             os.remove(update_path)
         end
@@ -54,7 +54,7 @@ function main()
         if update_state then
             downloadUrlToFile(script_url, script_path, function(id, status) 
                 if status == dlstatus.STATUS_ENDDOWNLOADDATA then
-                    sampAddChatMessage(tag .. "{FFFFFF}Ñêðèïò óñïåøíî {5A90CE}îáíîâëåí!", main_color)
+                    sampAddChatMessage(tag .. "{FFFFFF}Скрипт успешно {5A90CE}обновлен!", main_color)
                     thisScript():reload()
                 end
             end)
@@ -65,5 +65,5 @@ function main()
 end
 
 function cmd_update(arg)
-    sampShowDialog(1000, "Àâòîîáíîâëåíèå v2.0", "Ýòî àâòîîáíîâëåíèå äåòêà\nÍîâàÿ âåðñèÿ", "Çàêðûòü", "", 0)
+    sampShowDialog(1000, "Автообновление новое!!!!", "Это автообновление детка", "Закрыть", "", 0)
 end
