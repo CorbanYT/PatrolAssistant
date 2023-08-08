@@ -17,8 +17,8 @@ u8 = encoding.UTF8
 
 update_state = false
 
-local script_vers = 1
-local script_vers_text = "1"
+local script_vers = 2
+local script_vers_text = "1.01"
 
 local update_path = getWorkingDirectory() .. "/update.ini"
 local update_url = "https://raw.githubusercontent.com/CorbanYT/PatrolAssistant/main/update.ini"
@@ -65,5 +65,5 @@ function main()
 end
 
 function cmd_update(arg)
-    sampShowDialog(1000, "Автообновление", "Это автообновление детка", "Закрыть", "", 0)
+    sampShowDialog(1000, "Автообновление v2.0", "Это автообновление детка\nНовая версия", "Закрыть", "", 0)
 end
