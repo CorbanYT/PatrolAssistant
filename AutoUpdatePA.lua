@@ -17,8 +17,8 @@ local function u8d(s) return encoding.UTF8:decode(s) end
 
 update_state = false
 
-local script_vers = 4
-local script_vers_text = "1.04
+local script_vers = 5
+local script_vers_text = "1.05"
 
 local update_path = getWorkingDirectory() .. "/update.ini"
 local update_url = "https://raw.githubusercontent.com/CorbanYT/PatrolAssistant/main/update.ini"
