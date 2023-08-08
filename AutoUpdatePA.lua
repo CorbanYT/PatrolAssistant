@@ -24,7 +24,7 @@ local update_path = getWorkingDirectory() .. "/update.ini"
 local update_url = "https://raw.githubusercontent.com/CorbanYT/PatrolAssistant/main/update.ini"
 
 local script_path = thisScript().path
-local script_url = ""
+local script_url = "https://github.com/CorbanYT/PatrolAssistant/raw/main/AutoUpdatePA.lua"
 
 
 function main()
