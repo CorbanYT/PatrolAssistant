@@ -43,6 +43,7 @@ function main()
             updateIni = inicfg.load(nil, update_path)
             if tonumber(updateIni.info.vers) > script_vers then 
                 sampAddChatMessage(tag .. "{FFFFFF}Появилось новое обновление! Версия: {5A90CE}".. updateIni.info.vers_text, main_color)
+		update_state = true
             end
             os.remove(update_path)
         end
